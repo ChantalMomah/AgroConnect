@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect - Buyer Products</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2 class="logo">🌾 AgroConnect</h2>
+
+        <ul class="sidebar-links">
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="buyer-products.html" class="active">🛒 Products</a></li>
+            <li><a href="#" class="ordersLink">📦 Orders</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+        </ul>
+
+        <button id="logout-btn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <h2>Browse Products</h2>
+            <p>
+                Discover agricultural products from trusted farmers and input
+                sellers across South-South Nigeria.
+            </p>
+        </section>
+
+        <section class="best-sellers-section">
+
+    <div class="best-sellers-heading">
+        <h2>Best Sellers of the Week</h2>
+        <p>Popular products buyers are loving this week</p>
+    </div>
+
+    <div class="hero-banner">
+
+        <div class="best-sellers-carousel">
+
+            <div id="best-sellers-slides"></div>
+
+            <button
+                class="carousel-btn carousel-prev"
+                id="carousel-prev"
+                type="button">
+                ❮
+            </button>
+
+            <button
+                class="carousel-btn carousel-next"
+                id="carousel-next"
+                type="button">
+                ❯
+            </button>
+
+            <div
+                class="carousel-dots"
+                id="carousel-dots">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- Search & Filter -->
+        <section class="filter-bar">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search products...">
+
+            <select id="state-filter">
+                <option value="">All States</option>
+                <option value="AKWA_IBOM">Akwa Ibom</option>
+                <option value="BAYELSA">Bayelsa</option>
+                <option value="CROSS_RIVER">Cross River</option>
+                <option value="DELTA">Delta</option>
+                <option value="EDO">Edo</option>
+                <option value="RIVERS">Rivers</option>
+            </select>
+
+            <button id="filter-btn">
+                Filter
+            </button>
+
+        </section>
+
+        <!-- Products -->
+        <section
+            id="products-container"
+            class="products-grid">
+
+            <!-- Loaded by products.js -->
+
+        </section>
+
+    </main>
+
+</div>
+
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/buyer-products.js"></script>
+
+<script type="module">
+
+import {
+    requireAuth,
+    logout,
+    setupOrdersLink,
+    setupProductsLink
+} from "./js/auth.js";
+
+if (!requireAuth()) {
+
+}
+
+requireAuth();
+
+setupOrdersLink();
+setupProductsLink();
+
+const logoutBtn =
+    document.getElementById("logout-btn");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener(
+        "click",
+        logout
+    );
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Buyer Orders</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">  
+    <link rel="stylesheet" href="css/orders.css">   
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2 class="logo">🌾 AgroConnect</h2>
+
+        <ul class="sidebar-links">
+
+            <li>
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+            </li>
+
+            <a href="buyer-products.html" class="productsLink">
+                 🛒 Products
+            </a>
+
+            <li>
+                <a href="buyer-orders.html" class="active">
+                    📦 Orders
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    👤 Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    ⚙️ Settings
+                </a>
+            </li>
+
+        </ul>
+
+        <button
+            id="logout-btn"
+            class="logout-btn">
+
+            Logout
+
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <section class="page-header">
+
+            <h1>My Orders</h1>
+
+            <p>
+                Manage your cart and track your orders.
+            </p>
+
+        </section>
+
+
+        <!-- CART -->
+
+        <section class="orders-section">
+
+            <div class="section-heading">
+
+                <h2>🛒 Cart</h2>
+
+                <span
+                    id="cart-count"
+                    class="section-count">
+                    0
+                </span>
+
+            </div>
+
+
+            <div
+                id="cart-container"
+                class="orders-list">
+
+                <!-- Cart loaded by JS -->
+
+            </div>
+
+
+            <div
+                id="cart-summary"
+                class="cart-summary"
+                style="display: none;">
+
+                <div>
+
+                    <span>Cart Total</span>
+
+                    <strong id="cart-total">
+                        ₦0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PENDING ORDERS -->
+
+        <section class="orders-section">
+
+            <div class="section-heading">
+
+                <h2>⏳ Pending Orders</h2>
+
+                <span
+                    id="pending-count"
+                    class="section-count">
+                    0
+                </span>
+
+            </div>
+
+
+            <div
+                id="pending-orders-container"
+                class="orders-list">
+
+                <!-- Pending orders loaded by JS -->
+
+            </div>
+
+            <div id="pending-checkout" class="pending-checkout" style="display:none;">
+
+    <button id="checkout-selected-btn" class="btn btn-plum">
+
+        Proceed to Checkout (0)
+
+    </button>
+
+</div>
+
+        </section>
+
+
+        <!-- ONGOING ORDERS -->
+
+        <section class="orders-section">
+
+            <div class="section-heading">
+
+                <h2>🚚 Ongoing Orders</h2>
+
+                <span
+                    id="ongoing-count"
+                    class="section-count">
+                    0
+                </span>
+
+            </div>
+
+
+            <div
+                id="ongoing-orders-container"
+                class="orders-list">
+
+                <!-- Ongoing orders loaded by JS -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script type="module" src="js/buyer-orders.js"></script>
+
+<script type="module">
+import {
+    logout,
+    setupOrdersLink,
+    setupProductsLink
+} from "./js/auth.js";
+
+setupOrdersLink();
+setupProductsLink();
+
+const logoutBtn = document.getElementById("logout-btn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", logout);
+}
+</script>
+
+</body>
+
+</html>

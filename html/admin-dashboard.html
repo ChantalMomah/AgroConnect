@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect | Admin Dashboard</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+
+<body>
+
+<div class="admin-container" id="adminContainer">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">AgroConnect</span>
+            </div>
+
+            <div class="admin-label">
+                ADMINISTRATION
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="admin-dashboard.html" class="sidebar-link active">
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#users" class="sidebar-link">
+                    <span class="nav-icon">👤</span>
+                    <span>Users</span>
+                </a>
+
+                <a href="#products" class="sidebar-link">
+                    <span class="nav-icon">🛒</span>
+                    <span>Products</span>
+                </a>
+
+                <a href="#orders" class="sidebar-link">
+                    <span class="nav-icon">📦</span>
+                    <span>Orders</span>
+                </a>
+
+                <a href="#complaints" class="sidebar-link">
+                    <span class="nav-icon">📝</span>
+                    <span>Complaints</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <button id="logout-btn" class="logout-btn">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button id="menuToggle" class="menu-toggle" aria-label="Toggle sidebar">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <p class="page-label">ADMIN PANEL</p>
+                <h1>Administrator Dashboard</h1>
+            </div>
+
+            <div class="admin-profile-mini">
+
+                <div class="admin-avatar">
+                    A
+                </div>
+
+                <div class="admin-info">
+                    <strong>Administrator</strong>
+                    <span>Admin Account</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME / OVERVIEW -->
+
+        <section class="dashboard-intro">
+
+            <div>
+
+                <p class="eyebrow">OVERVIEW</p>
+
+                <h2>Welcome back, Administrator</h2>
+
+                <p>
+                    Monitor users, products, orders and platform activity
+                    from one place.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">PLATFORM OVERVIEW</p>
+
+                    <h2>Key Statistics</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <!-- USERS -->
+
+                <div class="stat-card users-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">👤</div>
+
+                        <span class="stat-label">
+                            USERS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalUsers">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        Registered users
+                    </p>
+
+                </div>
+
+
+                <!-- FARMERS -->
+
+                <div class="stat-card farmers-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">🌽</div>
+
+                        <span class="stat-label">
+                            FARMERS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalFarmers">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        Registered farmers
+                    </p>
+
+                </div>
+
+
+                <!-- BUYERS -->
+
+                <div class="stat-card buyers-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">🧍‍♀️</div>
+
+                        <span class="stat-label">
+                            BUYERS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalBuyers">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        Registered buyers
+                    </p>
+
+                </div>
+
+
+                <!-- INPUT SELLERS -->
+
+                <div class="stat-card sellers-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">🤵</div>
+
+                        <span class="stat-label">
+                            INPUT SELLERS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalInputSellers">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        Registered input sellers
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUCTS -->
+
+                <div class="stat-card products-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">🛒</div>
+
+                        <span class="stat-label">
+                            PRODUCTS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalProducts">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        Products listed
+                    </p>
+
+                </div>
+
+
+                <!-- ORDERS -->
+
+                <div class="stat-card orders-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">📦</div>
+
+                        <span class="stat-label">
+                            ORDERS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalOrders">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        Platform orders
+                    </p>
+
+                </div>
+
+
+                <!-- COMPLAINTS -->
+
+                <div class="stat-card complaints-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">📝</div>
+
+                        <span class="stat-label">
+                            COMPLAINTS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalComplaints">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        User complaints
+                    </p>
+
+                </div>
+
+
+                <!-- SUGGESTIONS — NEW BOX -->
+
+                <div class="stat-card suggestions-card">
+
+                    <div class="stat-card-top">
+
+                        <div class="stat-icon">💡</div>
+
+                        <span class="stat-label">
+                            SUGGESTIONS
+                        </span>
+
+                    </div>
+
+                    <div class="stat-value" id="totalSuggestions">
+                        0
+                    </div>
+
+                    <p class="stat-description">
+                        User suggestions
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEWEST USERS -->
+
+        <section class="dashboard-panel recent-users">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RECENT ACTIVITY
+                    </p>
+
+                    <h2>
+                        Newest Users
+                    </h2>
+
+                    <p class="panel-description">
+                        Recently registered users on AgroConnect.
+                    </p>
+
+                </div>
+
+                <a href="#users" class="view-section-link">
+                    View all users →
+                </a>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>State</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="recentUsersBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ALL USERS -->
+
+        <section id="users" class="dashboard-panel admin-section">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        USER MANAGEMENT
+                    </p>
+
+                    <h2>
+                        All Users
+                    </h2>
+
+                    <p class="panel-description">
+                        View and manage all registered users.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>State</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="usersTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section id="products" class="dashboard-panel admin-section">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PRODUCT MANAGEMENT
+                    </p>
+
+                    <h2>
+                        All Products
+                    </h2>
+
+                    <p class="panel-description">
+                        Monitor products listed by sellers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Product</th>
+                            <th>Seller</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="productsTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDERS -->
+
+        <section id="orders" class="dashboard-panel admin-section">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        ORDER MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Orders
+                    </h2>
+
+                    <p class="panel-description">
+                        Review and manage orders placed through the platform.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Buyer</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="ordersTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPLAINTS & SUGGESTIONS -->
+
+        <section id="complaints" class="dashboard-panel admin-section">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        USER FEEDBACK
+                    </p>
+
+                    <h2>
+                        Complaints & Suggestions
+                    </h2>
+
+                    <p class="panel-description">
+                        Review feedback submitted by AgroConnect users.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>User</th>
+                            <th>Type</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="complaintsTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                AgroConnect Administration Panel
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script type="module" src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect - My Orders</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>🌾 AgroConnect</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#" class="productsLink">Products</a></li>
+            <li><a href="orders.html" class="active">Orders</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h2>My Orders</h2>
+        <p>Track and manage your orders.</p>
+    </section>
+
+    <!-- Orders Container -->
+    <section id="orders-container" class="orders-table-container">
+        <!-- Orders table will be loaded here by orders.js -->
+    </section>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/order.js"></script>
+    <script type="module">
+        import { requireAuth, logout } from "./auth.js";
+
+        if (!requireAuth()) {
+            // Redirect handled inside requireAuth
+        }
+
+        const logoutBtn = document.getElementById("logout-btn");
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", logout);
+        }
+    </script>
+</body>
+</html>

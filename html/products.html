@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect - Products</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2 class="logo">🌾 AgroConnect</h2>
+
+        <ul class="sidebar-links">
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="products.html" class="active">🛒 Products</a></li>
+            <li><a href="#" class="ordersLink">📦 Orders</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+        </ul>
+
+        <button id="logout-btn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h2>Browse Products</h2>
+        <p>Find farming tools, equipment, animal feed, and more.</p>
+    </section>
+
+    <section class="hero-banner">
+    <!-- Carousel images later -->
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="filter-bar">
+        <input type="text" id="search-input" placeholder="Search products by name...">
+        <select id="state-filter">
+            <option value="">All States</option>
+            <option value="AKWA_IBOM">Akwa Ibom</option>
+            <option value="BAYELSA">Bayelsa</option>
+            <option value="CROSS_RIVER">Cross River</option>
+            <option value="DELTA">Delta</option>
+            <option value="EDO">Edo</option>
+            <option value="RIVERS">Rivers</option>
+        </select>
+        <button id="filter-btn">Filter</button>
+    </section>
+
+    <!-- Products Container -->
+    <section id="products-container" class="products-grid">
+        <!-- Product cards will be loaded here by products.js -->
+    </section>
+
+        </main>
+
+</div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/products.js"></script>
+    <script type="module">
+        import { requireAuth, logout, setupOrdersLink } from "./js/auth.js";
+
+        if (!requireAuth()) {
+            // Redirect handled inside requireAuth
+
+        }
+
+        setupOrdersLink();
+
+        // Logout button
+        const logoutBtn = document.getElementById("logout-btn");
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", logout);
+        }
+    </script>
+</body>
+</html>

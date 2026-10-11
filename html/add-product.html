@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect | Add Product</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/add-product.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2 class="logo">🌾 AgroConnect</h2>
+
+        <ul class="sidebar-links">
+            <li><a href="dashboard.html">🏠 Dashboard</a></li>
+            <li><a href="seller-products.html" class="active">🛒 My Products</a></li>
+            <li><a href="#" class="ordersLink">📦 Orders</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+        </ul>
+
+        <button id="logout-btn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <section class="page-header">
+            <h2>Add New Product</h2>
+            <p>
+                Create a new product listing for buyers across South-South Nigeria.
+            </p>
+        </section>
+
+        <form id="add-product-form" class="product-form">
+
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input
+                    type="text"
+                    id="product-name"
+                    placeholder="e.g. Fresh Tomatoes"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    rows="5"
+                    placeholder="Describe your product..."
+                    required></textarea>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category" required>
+
+                        <option value="">Select Category</option>
+
+                        <option value="VEGETABLES">Vegetables</option>
+                        <option value="FRUITS">Fruits</option>
+                        <option value="GRAINS">Grains & Cereals</option>
+                        <option value="ROOT_CROPS">Root Crops</option>
+                        <option value="LEGUMES">Beans & Legumes</option>
+                        <option value="SEAFOOD">Seafood</option>
+                        <option value="RED_MEAT">Red Meat</option>
+                        <option value="POULTRY">Poultry</option>
+                        <option value="DAIRY">Dairy Products</option>
+                        <option value="EGGS">Eggs</option>
+                        <option value="SPICES">Spices & Herbs</option>
+                        <option value="PROCESSED">Processed Foods</option>
+                        <option value="SEEDS">Seeds</option>
+                        <option value="FERTILIZER">Fertilizer</option>
+                        <option value="ANIMAL_FEED">Animal Feed</option>
+                        <option value="FARM_TOOLS">Farm Tools & Equipment</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="unit">Unit</label>
+
+                    <select id="unit" required>
+
+                        <option value="">Select Unit</option>
+
+                        <option value="Kg">Kilogram (Kg)</option>
+                        <option value="Bag">Bag</option>
+                        <option value="Basket">Basket</option>
+                        <option value="Crate">Crate</option>
+                        <option value="Ton">Ton</option>
+                        <option value="Piece">Piece</option>
+                        <option value="Bunch">Bunch</option>
+                        <option value="Dozen">Dozen</option>
+                        <option value="Litre">Litre</option>
+                        <option value="Sack">Sack</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="price">Price Per Unit (₦)</label>
+                    <input
+                        type="number"
+                        id="price"
+                        min="1"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stock">Stock Quantity</label>
+                    <input
+                        type="number"
+                        id="stock"
+                        min="0"
+                        required>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+    <label for="state">
+        Seller's State
+    </label>
+
+    <select id="state" required>
+
+        <option value="">Select your state</option>
+
+        <option value="AKWA_IBOM">Akwa Ibom</option>
+        <option value="BAYELSA">Bayelsa</option>
+        <option value="CROSS_RIVER">Cross River</option>
+        <option value="DELTA">Delta</option>
+        <option value="EDO">Edo</option>
+        <option value="RIVERS">Rivers</option>
+
+    </select>
+
+</div>
+
+<div class="form-group delivery-states-group">
+
+    <label>
+        States You Can Transport This Product To
+    </label>
+
+    <p class="field-help">
+        Select all states where you can deliver this product.
+    </p>
+
+    <div class="state-checkboxes">
+
+        <label class="state-checkbox">
+            <input type="checkbox" name="deliveryStates" value="AKWA_IBOM">
+            <span>Akwa Ibom</span>
+        </label>
+
+        <label class="state-checkbox">
+            <input type="checkbox" name="deliveryStates" value="BAYELSA">
+            <span>Bayelsa</span>
+        </label>
+
+        <label class="state-checkbox">
+            <input type="checkbox" name="deliveryStates" value="CROSS_RIVER">
+            <span>Cross River</span>
+        </label>
+
+        <label class="state-checkbox">
+            <input type="checkbox" name="deliveryStates" value="DELTA">
+            <span>Delta</span>
+        </label>
+
+        <label class="state-checkbox">
+            <input type="checkbox" name="deliveryStates" value="EDO">
+            <span>Edo</span>
+        </label>
+
+        <label class="state-checkbox">
+            <input type="checkbox" name="deliveryStates" value="RIVERS">
+            <span>Rivers</span>
+        </label>
+
+    </div>
+
+</div>
+
+            <div class="form-group">
+
+                <label for="product-image">
+                    Product Image
+                </label>
+
+                <input
+                    type="file"
+                    id="product-image"
+                    accept="image/*">
+
+                <div class="image-preview">
+
+                    <img
+                        id="preview-image"
+                        src="images/default-product.png"
+                        alt="Preview">
+
+                </div>
+
+            </div>
+
+            <div class="form-buttons">
+
+                <button
+                    type="submit"
+                    class="btn btn-plum">
+
+                    Save Product
+
+                </button>
+
+                <button
+                    type="button"
+                    id="cancel-btn"
+                    class="btn btn-secondary">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/add-product.js"></script>
+
+</body>
+</html>

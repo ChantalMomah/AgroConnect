@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2 class="logo">🌾 AgroConnect</h2>
+
+        <ul class="sidebar-links">
+
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="buyer-products.html">🛒 Products</a></li>
+            <li><a href="buyer-orders.html" class="active">📦 Orders</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+
+        </ul>
+
+        <button id="logout-btn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <section class="page-header">
+
+            <h1>Checkout</h1>
+
+            <p>
+                Complete your order securely.
+            </p>
+
+        </section>
+
+
+        <div class="checkout-container">
+
+
+            <!-- LEFT COLUMN -->
+
+            <div class="checkout-column">
+
+
+                <!-- DELIVERY -->
+
+                <div class="checkout-card">
+
+                    <h2>Delivery Method</h2>
+
+                    <div class="delivery-options">
+
+                        <label class="delivery-option active">
+
+                            <input
+                                type="radio"
+                                name="delivery"
+                                value="DELIVERY"
+                                checked>
+
+                            <div>
+
+                                <strong>Seller-arranged Delivery</strong>
+
+                                <p>
+                                    Delivery fee will be agreed directly with the seller after payment.
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="delivery-option">
+
+                            <input
+                                type="radio"
+                                name="delivery"
+                                value="PICKUP">
+
+                            <div>
+
+                                <strong>Pickup</strong>
+
+                                <p>
+                                    Collect your order from the seller's pickup location.
+                                </p>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <div id="delivery-address-section">
+
+                        <label for="delivery-address">
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                            id="delivery-address"
+                            placeholder="Enter your delivery address..."
+                            rows="4"
+                            required></textarea>
+
+                        <small>
+                            The seller will contact you after payment to arrange delivery.
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        id="pickup-message"
+                        style="display:none;">
+
+                        <div class="pickup-card">
+
+                            📍 You'll collect this order from the seller.
+                            The seller will contact you with the pickup location and time after payment.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAYMENT -->
+
+                <div class="checkout-card">
+
+                    <h2>Payment Method</h2>
+
+                    <div class="payment-options">
+
+                        <label class="payment-option active">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="CARD"
+                                checked>
+
+                            <div>
+
+                                <strong>Pay by Card</strong>
+
+                                <p>
+                                    Debit or Credit Card
+                                </p>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="TRANSFER">
+
+                            <div>
+
+                                <strong>Bank Transfer</strong>
+
+                                <p>
+                                    Transfer to AgroConnect
+                                </p>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- CARD FORM -->
+
+<div
+    id="card-form"
+    class="payment-card-form">
+
+    <div>
+
+        <label>Cardholder Name</label>
+
+        <input
+            type="text"
+            placeholder="John Doe"
+            pattern="[A-Za-z ]+"
+            oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '')"
+            required>
+
+    </div>
+
+
+    <div>
+
+        <label>Card Number</label>
+
+        <input
+            type="text"
+            placeholder="1234 5678 9012 3456"
+            inputmode="numeric"
+            pattern="[0-9]{16}"
+            maxlength="16"
+            minlength="16"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+            required>
+
+    </div>
+
+
+    <div class="payment-row">
+
+        <div>
+
+            <label>Expiry</label>
+
+            <input
+                type="text"
+                placeholder="MM/YY"
+                inputmode="numeric"
+                pattern="[0-9]{4}"
+                maxlength="4"
+                minlength="4"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                required>
+
+        </div>
+
+
+        <div>
+
+            <label>CVV</label>
+
+            <input
+                type="password"
+                placeholder="123"
+                inputmode="numeric"
+                pattern="[0-9]{3}"
+                maxlength="3"
+                minlength="3"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                required>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+                    <!-- BANK TRANSFER -->
+
+                    <div
+                        id="transfer-box"
+                        style="display:none;">
+
+                        <div class="bank-card">
+
+                            <h3>AgroConnect Account</h3>
+
+                            <p>
+                                <strong>Bank:</strong>
+                                Moniepoint
+                            </p>
+
+                            <p>
+                                <strong>Account Name:</strong>
+                                AgroConnect Marketplace
+                            </p>
+
+                            <p>
+                                <strong>Account Number:</strong>
+                                81234567890
+                            </p>
+
+                            <small>
+                                After transferring, click "I've Made the Transfer."
+                            </small>
+
+                            <button
+                                id="transfer-confirm-btn"
+                                class="btn btn-plum">
+
+                                I've Made the Transfer
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- SAVED BANK INFORMATION -->
+
+                        <div
+                            id="saved-payment-box"
+                            class="saved-payment-box"
+                            style="display:none;">
+
+                            <h3>Saved Bank Information</h3>
+
+                            <p>
+                                You have bank information saved in Settings.
+                            </p>
+
+                            <div class="saved-payment-details">
+
+                                <p>
+                                    <strong>Bank:</strong>
+                                    <span id="saved-bank-name"></span>
+                                </p>
+
+                                <p>
+                                    <strong>Account Name:</strong>
+                                    <span id="saved-account-name"></span>
+                                </p>
+
+                                <p>
+                                    <strong>Account Number:</strong>
+                                    <span id="saved-account-number"></span>
+                                </p>
+
+                            </div>
+
+                            <p class="saved-payment-note">
+                                You can use these details when making your transfer.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT COLUMN -->
+
+            <div class="checkout-column">
+
+                <div class="checkout-card">
+
+                    <h2>Order Summary</h2>
+
+                    <div id="checkout-order"></div>
+
+                    <hr>
+
+
+                    <div class="checkout-item">
+
+                        <span>Subtotal</span>
+
+                        <strong id="checkout-subtotal">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="checkout-item">
+
+                        <span>Platform Fee</span>
+
+                        <strong id="checkout-fee">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="checkout-item">
+
+                        <span>Delivery</span>
+
+                        <strong id="delivery-text">
+                            Calculated with seller
+                        </strong>
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <div class="checkout-total">
+
+                        <span>Total</span>
+
+                        <strong id="checkout-total">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        id="pay-btn"
+                        class="btn btn-plum">
+
+                        Pay Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script type="module" src="js/checkout.js"></script>
+
+</body>
+
+</html>

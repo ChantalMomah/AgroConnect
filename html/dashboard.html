@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroConnect | Seller Dashboard</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+
+    <div class="navbar-inner">
+
+        <div class="navbar-logo">
+            🌾 AgroConnect
+        </div>
+
+        <nav class="navbar-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="#" class="productsLink">
+                My Products
+            </a>
+
+            <a href="#" class="ordersLink">
+                Orders
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="settings.html" class="settings-btn" aria-label="Settings">
+                ⚙️
+            </a>
+        </nav>
+
+        <div class="navbar-actions">
+
+            <button
+                class="btn btn-plum"
+                id="logout-btn">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero-section">
+
+    <div class="hero-tag">
+        South-South Agriculture Network
+    </div>
+
+
+    <div class="hero-with-cards">
+
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <div class="hero-left">
+
+            <h1 id="welcome-message">
+                Welcome to AgroConnect
+            </h1>
+
+
+            <p class="hero-description">
+
+                Manage your agricultural business, list your
+                products, connect with buyers, and keep track
+                of your orders — all from one place.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#"
+                    class="btn btn-plum productsLink">
+
+                    Manage Products
+
+                </a>
+
+
+                <a
+                    href="add-product.html"
+                    class="btn btn-outline">
+
+                    + Add Product
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <div class="hero-cards">
+
+
+            <!-- USER SEARCH -->
+
+            <div class="dashboard-user-search">
+
+                <div class="dashboard-search-box">
+
+                    <span class="dashboard-search-icon">
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="user-search-input"
+                        placeholder="Search users..."
+                        autocomplete="off">
+
+                </div>
+
+
+                <div
+                    id="user-search-results"
+                    class="user-search-results">
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTS -->
+
+            <a
+                href="#"
+                class="action-card productsLink">
+
+                <h3>
+                    My Products
+                </h3>
+
+                <p>
+                    View, edit and manage your agricultural
+                    product listings.
+                </p>
+
+                <span class="card-link">
+                    Manage Products →
+                </span>
+
+            </a>
+
+
+            <!-- ORDERS -->
+
+            <a
+                href="#"
+                id="ordersCard"
+                class="action-card ordersLink">
+
+                <h3>
+                    Orders
+                </h3>
+
+                <p>
+                    View and manage orders from buyers.
+                </p>
+
+                <span class="card-link">
+                    View Orders →
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="profile.html"
+                class="action-card">
+
+                <h3>
+                    Business Profile
+                </h3>
+
+                <p>
+                    Manage your personal and business
+                    information.
+                </p>
+
+                <span class="card-link">
+                    Manage Profile →
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURED SLIDESHOW ================= -->
+
+<section class="featured-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">
+            AgroConnect Spotlight
+        </span>
+
+        <h2>
+            Our Agricultural Community
+        </h2>
+
+    </div>
+
+
+    <div class="featured-slider">
+
+
+        <!-- ================= SLIDE 1 ================= -->
+
+        <div class="featured-slide active">
+
+            <img
+                class="farmer-week-image"
+                src="images/Farmer of the week.jpg"
+                alt="Farmer of the Week">
+
+
+            <div class="featured-person">
+
+                <span class="featured-label">
+                    Farmer of the Week
+                </span>
+
+                <h3>
+                    Efeoghene Mofe-Damijo
+                </h3>
+
+                <p>
+                    Delta State
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SLIDE 2 ================= -->
+
+        <div class="featured-slide">
+
+            <img
+                src="images/Women of Yakurr.webp"
+                alt="Women of Yakurr">
+
+
+            <div class="featured-person">
+
+                <span class="featured-label">
+                    Featured Community
+                </span>
+
+                <h3>
+                    Women of Yakurr
+                </h3>
+
+                <p>
+                    Cross River State
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SLIDE 3 ================= -->
+
+        <div class="featured-slide">
+
+            <img
+                src="images/Feature agricultural produce.webp"
+                alt="Featured Agricultural Products">
+
+
+            <div class="featured-person">
+
+                <span class="featured-label">
+                    Featured Products
+                </span>
+
+                <h3>
+                    South-South Agricultural Produce
+                </h3>
+
+                <p>
+                    Fresh produce from our region
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PREVIOUS ================= -->
+
+        <button
+            class="slider-btn slider-prev"
+            id="slider-prev"
+            type="button">
+
+            ❮
+
+        </button>
+
+
+        <!-- ================= NEXT ================= -->
+
+        <button
+            class="slider-btn slider-next"
+            id="slider-next"
+            type="button">
+
+            ❯
+
+        </button>
+
+
+        <!-- ================= DOTS ================= -->
+
+        <div class="slider-dots">
+
+            <button
+                class="slider-dot active"
+                data-slide="0">
+            </button>
+
+            <button
+                class="slider-dot"
+                data-slide="1">
+            </button>
+
+            <button
+                class="slider-dot"
+                data-slide="2">
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="main-footer">
+
+    <div class="footer-content">
+
+        <!-- BRAND -->
+
+        <div class="footer-column">
+
+            <h3>
+                🌾 AgroConnect
+            </h3>
+
+            <p>
+                Connecting farmers, buyers and agricultural
+                businesses through a simple digital marketplace.
+            </p>
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column">
+
+            <h4>
+                About
+            </h4>
+
+            <p>
+                AgroConnect is a digital agricultural marketplace
+                designed to make it easier for farmers and buyers
+                to discover, connect and trade agricultural products.
+            </p>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h4>
+                Contact Us
+            </h4>
+
+            <p>
+                Email:
+                support@agroconnect.com
+            </p>
+
+            <p>
+                Phone:
+                +234 800 000 0000
+            </p>
+
+            <p>
+                Instagram:
+                @agroconnect
+            </p>
+
+            <p>
+                TikTok:
+                @agroconnect
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <hr>
+
+
+    <p class="copyright">
+
+        © 2026 AgroConnect.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script type="module">
+
+import {
+    requireRole,
+    logout,
+    setupOrdersLink,
+    setupProductsLink
+} from "./js/auth.js";
+
+
+requireRole(["FARMER", "INPUT_SELLER"]);
+
+
+setupOrdersLink();
+
+setupProductsLink();
+
+
+const logoutBtn =
+    document.getElementById("logout-btn");
+
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener(
+        "click",
+        logout
+    );
+
+}
+
+</script>
+
+
+
+<!-- ================= SLIDER ================= -->
+
+<script>
+
+const slides =
+    document.querySelectorAll(".featured-slide");
+
+
+const dots =
+    document.querySelectorAll(".slider-dot");
+
+
+const nextButton =
+    document.getElementById("slider-next");
+
+
+const prevButton =
+    document.getElementById("slider-prev");
+
+
+let currentSlide = 0;
+
+
+function showSlide(index) {
+
+    slides.forEach(slide => {
+
+        slide.classList.remove("active");
+
+    });
+
+
+    dots.forEach(dot => {
+
+        dot.classList.remove("active");
+
+    });
+
+
+    slides[index].classList.add("active");
+
+    dots[index].classList.add("active");
+
+    currentSlide = index;
+
+}
+
+
+nextButton.addEventListener("click", () => {
+
+    currentSlide =
+        (currentSlide + 1) % slides.length;
+
+    showSlide(currentSlide);
+
+});
+
+
+prevButton.addEventListener("click", () => {
+
+    currentSlide =
+        (currentSlide - 1 + slides.length)
+        % slides.length;
+
+    showSlide(currentSlide);
+
+});
+
+
+dots.forEach(dot => {
+
+    dot.addEventListener("click", () => {
+
+        showSlide(
+            Number(dot.dataset.slide)
+        );
+
+    });
+
+});
+
+
+/* Automatic slide */
+
+setInterval(() => {
+
+    currentSlide =
+        (currentSlide + 1) % slides.length;
+
+    showSlide(currentSlide);
+
+}, 6000);
+
+</script>
+
+
+<script
+    type="module"
+    src="js/user-search.js">
+</script>
+
+<script>
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    const welcomeMessage =
+        document.getElementById("welcome-message");
+
+    if (welcomeMessage && user?.fullName) {
+        welcomeMessage.textContent =
+            `Welcome to AgroConnect, ${user.fullName}!`;
+    }
+</script>
+
+</body>
+
+</html>

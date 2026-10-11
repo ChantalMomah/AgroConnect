@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroConnect | Profile</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
+
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="main-header">
+
+    
+
+        <div class="logo">
+            <h1>🌾 AgroConnect</h1>
+        </div>
+
+
+        <nav>
+            <ul>
+
+                <li> <a href="#" class="dashboardLink">Dashboard</a></li>
+
+                <li><a href="#" class="productsLink">Products</a></li>
+
+                <li><a href="#" class="ordersLink">Orders</a></li>
+
+                <li><a href="profile.html" class="active">Profile</a></li>
+
+                <li><a href="settings.html" class="settings-btn" aria-label="Settings">
+                ⚙️
+                 </a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="back-navigation">
+    <button id="back-btn" class="back-btn">
+        🡸 Back
+    </button>
+</div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+<main class="profile-page">
+
+    <!-- ================= LEFT COLUMN ================= -->
+
+    <aside class="profile-sidebar">
+
+        <!-- PROFILE CARD -->
+        <section class="profile-card profile-main-card">
+
+            <div class="profile-header">
+
+                <div class="profile-image-container">
+
+                    <img
+                        src="images/default-avatar.png"
+                        alt="Profile Picture"
+                        id="profile-image"
+                        class="profile-image">
+
+                    <input
+                        type="file"
+                        id="profile-upload"
+                        accept="image/*"
+                        hidden>
+
+                    <button
+                        id="change-photo-btn"
+                        class="change-photo-btn">
+
+                        <i class="fa-solid fa-camera"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="profile-header-info">
+
+                    <h2 id="display-name">
+                        Loading...
+                    </h2>
+
+                    <p id="display-role"></p>
+
+                    <p
+                        id="display-businessName"
+                        class="profile-business-name">
+                        --
+                    </p>
+
+                    <p
+                        id="display-state"
+                        class="profile-state">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div id="edit-profile-container">
+
+                <button id="edit-btn">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                    Edit Profile
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACCOUNT INFORMATION -->
+
+        <section class="profile-card account-card">
+
+            <h3>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Account Information
+
+            </h3>
+
+            <p>
+
+                <strong>Date Joined:</strong>
+
+                <span id="display-createdAt">
+                    --
+                </span>
+
+            </p>
+
+            <p>
+
+                <strong>User ID:</strong>
+
+                <span id="display-userId">
+                    --
+                </span>
+
+            </p>
+
+        </section>
+
+
+        <div class="sidebar-bottom-grid">
+
+    <!-- STATISTICS -->
+    <section
+        id="profile-statistics"
+        class="profile-card statistics-card">
+
+        <h3>
+            <i class="fa-solid fa-chart-column"></i>
+            Statistics
+        </h3>
+
+        <div class="stats">
+
+            <div class="stat-box">
+                <h2 id="products-count">0</h2>
+                <p>Products Listed</p>
+            </div>
+
+            <div class="stat-box">
+                <h2 id="orders-count">0</h2>
+                <p>Orders Completed</p>
+            </div>
+
+            <div class="stat-box">
+                <h2>0</h2>
+                <p>Rating</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PUBLIC PRODUCTS (shown only on other users' profiles) -->
+
+    <section
+        id="public-products"
+        class="profile-card"
+        style="display:none;">
+
+        <h3>
+            <i class="fa-solid fa-box"></i>
+            Products
+        </h3>
+
+        <p>
+            View agricultural products listed by this user.
+        </p>
+
+        <button
+            type="button"
+            id="public-products-btn"
+            class="show-more-btn">
+
+            View Products
+
+        </button>
+
+    </section>
+
+
+    <!-- MY SHORTCUTS (hidden on public profiles) -->
+
+    <section
+        id="my-shortcuts-section"
+        class="profile-card shortcuts-card">
+
+        <h3 id="shortcuts-title">
+            <i class="fa-solid fa-bolt"></i>
+            My Shortcuts
+        </h3>
+
+        <div class="quick-actions">
+
+            <button type="button" id="view-products-btn">
+                <i class="fa-solid fa-box"></i>
+                <span>Products</span>
+            </button>
+
+            <button type="button" id="view-orders-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>My Orders</span>
+            </button>
+
+            <button type="button" id="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    </div>
+
+    </aside>
+
+
+    <!-- ================= RIGHT COLUMN ================= -->
+
+    <section class="profile-content">
+
+
+        <!-- PERSONAL INFORMATION -->
+
+        <section class="content-card personal-info-card">
+
+            <h2>
+
+                <i class="fa-solid fa-user"></i>
+
+                Personal Information
+
+            </h2>
+
+            <div class="info-grid">
+
+                <div>
+
+                    <label>Full Name</label>
+
+                    <p id="display-fullName">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>Email Address</label>
+
+                    <p id="display-email">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>Phone Number</label>
+
+                    <p id="display-phone">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>State</label>
+
+                    <p id="display-state2">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>Role</label>
+
+                    <p id="display-role2">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section
+            id="about-section"
+            class="content-card about-card">
+
+            <h2>
+
+                <i class="fa-solid fa-address-card"></i>
+
+                About
+
+            </h2>
+
+            <div class="bio-box">
+
+                <p id="display-bio">
+                    No bio available.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FARMER PROFILE -->
+
+        <section
+            id="farmer-section"
+            class="content-card"
+            style="display:none;">
+
+            <h2>
+
+                <i class="fa-solid fa-seedling"></i>
+
+                Farmer Profile
+
+            </h2>
+
+            <div class="info-grid">
+
+                <div>
+
+                    <label>Farm Size</label>
+
+                    <p id="display-farmSize">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>Primary Crops</label>
+
+                    <p id="display-primaryCrops">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INPUT SELLER PROFILE -->
+
+        <section
+            id="seller-section"
+            class="content-card"
+            style="display:none;">
+
+            <h2>
+
+                <i class="fa-solid fa-store"></i>
+
+                Input Seller Profile
+
+            </h2>
+
+            <div class="info-grid">
+
+                <div>
+
+                    <label>Business Description</label>
+
+                    <p id="display-businessDescription">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>Specialization</label>
+
+                    <p id="display-specialization">
+                        --
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <label>Operating States</label>
+
+                    <p id="display-operatingStates">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EDIT FARMER PROFILE -->
+
+        <section
+            id="edit-farmer"
+            class="content-card"
+            style="display:none;">
+
+            <h2>
+                Edit Farmer Profile
+            </h2>
+
+            <form id="farmer-form">
+
+                <div class="form-group">
+
+                    <label for="farm-size">
+                        Farm Size
+                    </label>
+
+                    <input
+                        type="text"
+                        id="farm-size"
+                        placeholder="e.g. 25 hectares">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="primary-crops">
+                        Primary Crops
+                    </label>
+
+                    <input
+                        type="text"
+                        id="primary-crops"
+                        placeholder="e.g. Cassava, Yam">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="farmer-bio">
+                        Bio
+                    </label>
+
+                    <textarea
+                        id="farmer-bio"
+                        rows="5"
+                        placeholder="Tell buyers about your farm"></textarea>
+
+                </div>
+
+
+                <div class="button-group">
+
+                    <button type="submit">
+                        Save Changes
+                    </button>
+
+                    <button
+                        type="button"
+                        class="cancel-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- EDIT INPUT SELLER -->
+
+        <section
+            id="edit-seller"
+            class="content-card"
+            style="display:none;">
+
+            <h2>
+                Edit Input Seller Profile
+            </h2>
+
+            <form id="seller-form">
+
+                <div class="form-group">
+
+                    <label for="business-description">
+                        Business Description
+                    </label>
+
+                    <textarea
+                        id="business-description"
+                        rows="4"></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="specialization">
+                        Specialization
+                    </label>
+
+                    <input
+                        type="text"
+                        id="specialization">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="operating-states">
+                        Operating States
+                    </label>
+
+                    <input
+                        type="text"
+                        id="operating-states">
+
+                </div>
+
+
+                <div class="button-group">
+
+                    <button type="submit">
+                        Save Changes
+                    </button>
+
+                    <button
+                        type="button"
+                        class="cancel-btn">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="main-footer">
+
+    <div class="footer-content">
+
+        <!-- BRAND -->
+
+        <div class="footer-column">
+
+            <h3>
+                🌾 AgroConnect
+            </h3>
+
+            <p>
+                Connecting farmers, buyers and agricultural
+                businesses through a simple digital marketplace.
+            </p>
+
+        </div>
+
+
+        <!-- ABOUT -->
+
+        <div class="footer-column">
+
+            <h4>
+                About
+            </h4>
+
+            <p>
+                AgroConnect is a digital agricultural marketplace
+                designed to make it easier for farmers and buyers
+                to discover, connect and trade agricultural products.
+            </p>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h4>
+                Contact Us
+            </h4>
+
+            <p>
+                Email:
+                support@agroconnect.com
+            </p>
+
+            <p>
+                Phone:
+                +234 800 000 0000
+            </p>
+
+            <p>
+                Instagram:
+                @agroconnect
+            </p>
+
+            <p>
+                TikTok:
+                @agroconnect
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <hr>
+
+
+    <p class="copyright">
+
+        © 2026 AgroConnect.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- ================= LOADING ================= -->
+
+<div id="loading-overlay" style="display:none;">
+
+    <div class="loader">
+
+        <i class="fa-solid fa-spinner fa-spin"></i>
+
+        <p>Loading...</p>
+
+    </div>
+
+</div>
+
+
+<div id="success-message" style="display:none;">
+
+    Profile updated successfully.
+
+</div>
+
+
+<div id="error-message" style="display:none;">
+
+    Something went wrong.
+
+</div>
+
+
+<script type="module" src="js/api.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+<script type="module" src="js/profile.js"></script>
+
+<script type="module">
+import { requireAuth, logout, setupOrdersLink } from "./js/auth.js";
+
+requireAuth();
+setupOrdersLink();
+
+const logoutBtn = document.getElementById("logout-btn");
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", logout);
+}
+</script>
+
+</body>
+
+</html>
