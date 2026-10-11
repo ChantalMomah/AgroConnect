@@ -1,0 +1,374 @@
+/* ============================================
+   AgroConnect Register Page
+   ============================================ */
+
+/* ============================================
+   Left Panel
+   ============================================ */
+
+.register-layout{
+    display:flex;
+    min-height:100vh;
+}
+
+.register-hero{
+    background-color:var(--plum);
+    color:var(--text-light);
+    width:45%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:2rem 3rem;
+    box-sizing:border-box;
+}
+
+.register-logo{
+    font-family:var(--font-heading);
+    font-size:1.25rem;
+    font-style:italic;
+    flex-shrink:0;
+}
+
+.register-logo a{
+    color:var(--text-light);
+}
+
+/* ============================================
+   LEFT PANEL WRITE-UP
+   ============================================ */
+
+.register-hero-content{
+    max-width:400px;
+    width:100%;
+
+    margin:3rem auto 0;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.register-hero-content h1{
+    font-family:var(--font-heading);
+    font-size:2.75rem;
+    font-weight:400;
+    line-height:1.15;
+    color:var(--text-light);
+    margin-bottom:1.25rem;
+}
+
+.register-hero-content span{
+    color:var(--lavender-light);
+    font-style:italic;
+}
+
+.register-hero-content p{
+    font-size:.9375rem;
+    line-height:1.7;
+    opacity:.85;
+    margin-bottom:3.5rem;
+}
+
+/* ============================================
+   REGISTER IMAGE SLIDER
+   ============================================ */
+
+.register-images{
+    width:100%;
+    height:220px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:14px;
+}
+
+.register-image{
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transition:opacity .5s ease;
+}
+
+.register-image:first-child{
+    opacity:1;
+}
+
+.register-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+/* ============================================
+   SLIDER DOTS
+   ============================================ */
+
+.register-slider-dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:.5rem;
+    margin-top:1rem;
+}
+
+.slider-dot{
+    width:8px;
+    height:8px;
+    padding:0;
+    border:none;
+    border-radius:50%;
+    background-color:rgba(255,255,255,.4);
+}
+
+.slider-dot.active{
+    width:22px;
+    border-radius:10px;
+    background-color:var(--text-light);
+}
+
+
+/* ============================================
+   PROJECT STATS
+   ============================================ */
+
+.register-stats{
+    margin-top:2rem;
+    text-align:center;
+}
+
+.stats-heading{
+    margin:0 0 1rem;
+    font-size:.85rem;
+    opacity:.8;
+}
+
+.stats-items{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:2.5rem;
+}
+
+.stat-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.stat-item strong{
+    font-size:1.4rem;
+    font-weight:500;
+    color:var(--text-light);
+}
+
+.stat-item span{
+    font-size:.7rem;
+    opacity:.65;
+    margin-top:.2rem;
+}
+
+/* ============================================
+   SLIDER ARROWS
+   ============================================ */
+
+.slider-arrow{
+    position:absolute;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    width:36px;
+    height:36px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+
+    font-size:1.2rem;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:5;
+
+    transition:background-color .2s ease;
+}
+
+.slider-arrow:hover{
+    background:rgba(0,0,0,.7);
+}
+
+.slider-prev{
+    left:12px;
+}
+
+.slider-next{
+    right:12px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.register-footer{
+    font-size:.6875rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    opacity:.6;
+    text-align:center;
+    margin-top:auto;
+    padding-top:1.5rem;
+    flex-shrink:0;
+}
+
+
+/* ============================================
+   Right Panel
+   ============================================ */
+
+.register-form-panel{
+    width:55%;
+    min-height:100vh;
+    background-color:var(--cream-bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    box-sizing:border-box;
+}
+
+.register-form-wrapper{
+    width:100%;
+    max-width:420px;
+}
+
+.register-form-wrapper h2{
+    font-family:var(--font-heading);
+    font-size:1.5rem;
+    font-weight:400;
+    margin-bottom:.25rem;
+}
+
+.register-subtitle{
+    font-size:.875rem;
+    color:var(--text-muted);
+    margin-bottom:1.75rem;
+}
+
+
+/* ============================================
+   Form
+   ============================================ */
+
+.register-form .form-group{
+    margin-bottom:1rem;
+}
+
+.register-form input,
+.register-form select{
+    width:100%;
+    padding:.75rem;
+    border:1px solid var(--divider);
+    border-radius:8px;
+    background:var(--card-white);
+    font-size:.875rem;
+    box-sizing:border-box;
+}
+
+.register-form input:focus,
+.register-form select:focus{
+    outline:none;
+    border-color:var(--plum);
+    box-shadow:0 0 0 3px rgba(90,42,91,.15);
+}
+
+.btn-register{
+    width:100%;
+    padding:.75rem;
+    background-color:var(--plum);
+    color:var(--text-light);
+    border:none;
+    border-radius:8px;
+    font-size:.9375rem;
+    font-weight:500;
+    cursor:pointer;
+    transition:background-color .2s ease;
+    margin-top:.5rem;
+}
+
+.btn-register:hover{
+    background-color:var(--plum-dark);
+}
+
+
+/* ============================================
+   Login Link
+   ============================================ */
+
+.register-login{
+    text-align:center;
+    font-size:.8125rem;
+    color:var(--text-muted);
+    margin-top:1.5rem;
+}
+
+.register-login a{
+    color:var(--text-dark);
+    font-weight:600;
+}
+
+.register-login a:hover{
+    color:var(--plum);
+}
+
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width:768px){
+
+    .register-layout{
+        flex-direction:column;
+    }
+
+    .register-hero{
+        width:100%;
+        min-height:auto;
+        padding:2rem 1.5rem;
+    }
+
+    .register-hero-content{
+        margin-top:2rem;
+    }
+
+    .register-hero-content h1{
+        font-size:1.75rem;
+    }
+
+    .register-images{
+        height:250px;
+    }
+
+    .register-form-panel{
+        width:100%;
+        min-height:auto;
+        padding:2rem 1.5rem;
+    }
+
+}

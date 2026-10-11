@@ -1,0 +1,290 @@
+/* ==========================================
+   SETTINGS PAGE
+========================================== */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--cream-bg);
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    color: var(--plum);
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: var(--text-muted);
+}
+
+
+/* ==========================================
+   SETTINGS CARD
+========================================== */
+
+.settings-card {
+    background: var(--card-white);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.settings-card h2 {
+    margin-bottom: 15px;
+    color: var(--plum);
+    border-bottom: 1px solid var(--divider);
+    padding-bottom: 10px;
+}
+
+.settings-card p {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.section-help {
+    color: var(--text-muted) !important;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   FORM ELEMENTS
+========================================== */
+
+.setting-item {
+    margin-bottom: 20px;
+}
+
+.setting-item label,
+.password-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.settings-card input,
+.settings-card textarea,
+.settings-card select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background: white;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.settings-card input:focus,
+.settings-card textarea:focus,
+.settings-card select:focus {
+    outline: none;
+    border-color: var(--plum);
+    box-shadow: 0 0 0 3px rgba(90, 42, 91, 0.15);
+}
+
+.settings-card textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================
+   PROFILE LINK
+========================================== */
+
+.profile-link-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   PASSWORD
+========================================== */
+
+.password-field {
+    margin-bottom: 20px;
+}
+
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-wrapper input {
+    padding-right: 50px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: none;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    padding: 5px;
+}
+
+.password-toggle:hover {
+    color: var(--plum);
+}
+
+
+/* ==========================================
+   NOTIFICATIONS
+========================================== */
+
+.notification-option {
+    padding: 15px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--divider);
+}
+
+.notification-option:last-of-type {
+    margin-bottom: 20px;
+}
+
+.notification-option label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.notification-option input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--plum);
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.save-btn,
+.secondary-btn,
+.delete-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.save-btn {
+    background: var(--plum);
+    color: white;
+}
+
+.save-btn:hover {
+    background: var(--plum-dark);
+}
+
+.secondary-btn {
+    background: white;
+    color: var(--plum);
+    border: 1px solid var(--plum);
+}
+
+.secondary-btn:hover {
+    background: var(--lavender-light);
+}
+
+.delete-btn {
+    background: #d32f2f;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #b71c1c;
+}
+
+
+/* ==========================================
+   DANGER ZONE
+========================================== */
+
+.danger {
+    border-left: 6px solid #d32f2f;
+}
+
+.danger h2 {
+    color: #d32f2f;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .settings-card {
+        padding: 18px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .save-btn,
+    .secondary-btn,
+    .delete-btn {
+        width: 100%;
+    }
+
+    .profile-link-btn {
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+}

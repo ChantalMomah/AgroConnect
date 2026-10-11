@@ -1,0 +1,1056 @@
+/* =========================================================
+AGROCONNECT ADMIN DASHBOARD
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f5f6fa;
+color: #252525;
+}
+
+/* =========================================================
+MAIN LAYOUT
+========================================================= */
+
+.admin-container {
+min-height: 100vh;
+display: flex;
+}
+
+.content {
+flex: 1;
+min-width: 0;
+margin-left: 250px;
+padding: 0 40px 40px;
+transition: margin-left 0.3s ease;
+}
+
+/* =========================================================
+SIDEBAR
+========================================================= */
+
+.sidebar {
+position: fixed;
+top: 0;
+left: 0;
+width: 250px;
+height: 100vh;
+z-index: 1000;
+
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+padding: 28px 18px;
+
+background: var(--plum, #5A2A5B);
+color: white;
+
+box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+
+transition:
+    transform 0.3s ease,
+    width 0.3s ease;
+
+}
+
+.sidebar-top {
+width: 100%;
+}
+
+/* =========================================================
+LOGO
+========================================================= */
+
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
+
+padding: 0 10px;
+margin-bottom: 38px;
+
+color: white;
+
+}
+
+.logo-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 38px;
+height: 38px;
+
+background: rgba(255, 255, 255, 0.14);
+border-radius: 10px;
+
+font-size: 20px;
+
+}
+
+.logo-text {
+font-family: var(--font-heading, Arial, sans-serif);
+font-size: 21px;
+font-weight: 700;
+font-style: italic;
+}
+
+/* =========================================================
+SIDEBAR LABEL
+========================================================= */
+
+.admin-label {
+padding: 0 12px;
+margin-bottom: 12px;
+
+color: rgba(255, 255, 255, 0.55);
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1.5px;
+
+}
+
+/* =========================================================
+SIDEBAR NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.sidebar-link {
+display: flex;
+align-items: center;
+gap: 13px;
+
+min-height: 48px;
+padding: 0 13px;
+
+border-radius: 10px;
+
+color: rgba(255, 255, 255, 0.82);
+text-decoration: none;
+
+font-size: 14px;
+font-weight: 500;
+
+transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+.sidebar-link:hover {
+background: rgba(255, 255, 255, 0.10);
+color: white;
+transform: translateX(2px);
+}
+
+.sidebar-link.active {
+background: rgba(255, 255, 255, 0.16);
+color: white;
+font-weight: 600;
+
+box-shadow:
+    inset 3px 0 0 rgba(255, 255, 255, 0.9);
+
+}
+
+.nav-icon {
+width: 23px;
+min-width: 23px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-size: 18px;
+
+}
+
+/* =========================================================
+SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+width: 100%;
+}
+
+.logout-btn {
+width: 100%;
+min-height: 46px;
+
+display: flex;
+align-items: center;
+gap: 13px;
+
+padding: 0 13px;
+
+border: 1px solid #c43d3d;
+border-radius: 10px;
+
+background: #c43d3d;
+color: white;
+
+cursor: pointer;
+
+font-size: 14px;
+font-weight: 500;
+
+transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.logout-btn:hover {
+background: #a93232;
+border-color: #a93232;
+transform: translateY(-1px);
+}
+
+/* =========================================================
+TOP BAR
+========================================================= */
+
+.topbar {
+min-height: 94px;
+
+display: flex;
+align-items: center;
+gap: 18px;
+
+border-bottom: 1px solid #e7e7eb;
+
+}
+
+.topbar-title {
+flex: 1;
+}
+
+.page-label,
+.eyebrow {
+margin-bottom: 5px;
+
+color: #8a8a95;
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1.4px;
+
+}
+
+.topbar h1 {
+margin: 0;
+
+color: #222229;
+
+font-size: 27px;
+font-weight: 700;
+line-height: 1.2;
+
+}
+
+/* =========================================================
+ADMIN MINI PROFILE
+========================================================= */
+
+.admin-profile-mini {
+display: flex;
+align-items: center;
+gap: 11px;
+
+padding-left: 18px;
+
+border-left: 1px solid #e5e5e8;
+
+}
+
+.admin-avatar {
+width: 40px;
+height: 40px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 50%;
+
+background: #eee4ef;
+color: #5A2A5B;
+
+font-size: 15px;
+font-weight: 700;
+
+}
+
+.admin-info {
+display: flex;
+flex-direction: column;
+gap: 3px;
+}
+
+.admin-info strong {
+color: #29292f;
+font-size: 13px;
+}
+
+.admin-info span {
+color: #90909a;
+font-size: 11px;
+}
+
+/* =========================================================
+MENU TOGGLE
+========================================================= */
+
+.menu-toggle {
+width: 42px;
+height: 42px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border: 1px solid #dedee4;
+border-radius: 9px;
+
+background: white;
+color: #5A2A5B;
+
+cursor: pointer;
+
+font-size: 19px;
+
+transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+.menu-toggle {
+background: #f3edf4;
+border-color: #d4c5d6;
+transform: translateY(-1px);
+}
+
+/* =========================================================
+DASHBOARD INTRO
+========================================================= */
+
+.dashboard-intro {
+margin-top: 28px;
+margin-bottom: 30px;
+
+padding: 27px 30px;
+
+border: 1px solid #e8e4e9;
+border-radius: 15px;
+
+background:
+    linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #faf7fb 100%
+    );
+
+box-shadow: 0 5px 20px rgba(50, 35, 55, 0.04);
+
+}
+
+.dashboard-intro h2 {
+margin-bottom: 7px;
+
+color: #28242a;
+
+font-size: 22px;
+font-weight: 700;
+
+}
+
+.dashboard-intro p {
+color: #77737a;
+
+font-size: 13px;
+line-height: 1.6;
+
+}
+
+/* =========================================================
+SECTION HEADINGS
+========================================================= */
+
+.stats-section {
+margin-bottom: 32px;
+}
+
+.section-heading {
+margin-bottom: 17px;
+}
+
+.section-heading h2,
+.panel-header h2 {
+color: #28282e;
+font-size: 19px;
+font-weight: 700;
+}
+
+/* =========================================================
+STATISTICS GRID
+========================================================= */
+
+.stats-grid {
+display: grid;
+
+grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+gap: 16px;
+
+}
+
+/* =========================================================
+STAT CARDS
+========================================================= */
+
+.stat-card {
+position: relative;
+overflow: hidden;
+
+min-height: 153px;
+
+padding: 21px;
+
+border: 1px solid #e9e9ed;
+border-radius: 14px;
+
+background: white;
+
+box-shadow: 0 4px 15px rgba(35, 30, 40, 0.045);
+
+transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+.stat-card::after {
+content: "";
+
+position: absolute;
+
+width: 80px;
+height: 80px;
+
+right: -28px;
+bottom: -30px;
+
+border-radius: 50%;
+
+background: rgba(90, 42, 91, 0.035);
+
+}
+
+.stat-card:hover {
+transform: translateY(-3px);
+
+box-shadow:
+    0 9px 25px rgba(35, 30, 40, 0.08);
+
+}
+
+.stat-card-top {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+margin-bottom: 15px;
+
+}
+
+.stat-icon {
+width: 38px;
+height: 38px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 10px;
+
+background: #f1e9f2;
+color: #5A2A5B;
+
+font-size: 17px;
+
+}
+
+.stat-label {
+color: #9a9aa2;
+
+font-size: 9px;
+font-weight: 700;
+letter-spacing: 1px;
+
+}
+
+.stat-value {
+margin-bottom: 4px;
+
+color: #29272c;
+
+font-size: 29px;
+font-weight: 700;
+line-height: 1;
+
+}
+
+.stat-description {
+color: #898991;
+
+font-size: 11px;
+
+}
+
+/* =========================================================
+STAT CARD VARIATIONS
+========================================================= */
+
+.farmers-card .stat-icon {
+background: #edf5ec;
+color: #4f814b;
+}
+
+.buyers-card .stat-icon {
+background: #eef3f8;
+color: #4c6f91;
+}
+
+.sellers-card .stat-icon {
+background: #f6f0e7;
+color: #96733f;
+}
+
+.products-card .stat-icon {
+background: #eeeaf5;
+color: #65528a;
+}
+
+.orders-card .stat-icon {
+background: #eaf3f2;
+color: #427a76;
+}
+
+.complaints-card .stat-icon {
+background: #f8eeee;
+color: #a34e4e;
+}
+
+/* =========================================================
+DASHBOARD PANELS
+========================================================= */
+
+.dashboard-panel {
+margin-bottom: 28px;
+
+border: 1px solid #e5e5e9;
+border-radius: 15px;
+
+background: white;
+
+box-shadow: 0 4px 15px rgba(35, 30, 40, 0.045);
+
+overflow: hidden;
+
+}
+
+.admin-section {
+scroll-margin-top: 25px;
+}
+
+/* =========================================================
+PANEL HEADER
+========================================================= */
+
+.panel-header {
+min-height: 95px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+
+padding: 22px 25px;
+
+border-bottom: 1px solid #eeeeF1;
+
+}
+
+.panel-header h2 {
+margin-bottom: 6px;
+}
+
+.panel-description {
+color: #8a8a92;
+
+font-size: 12px;
+line-height: 1.5;
+
+}
+
+/* =========================================================
+VIEW ALL LINK
+========================================================= */
+
+.view-section-link {
+flex-shrink: 0;
+
+color: #5A2A5B;
+
+font-size: 12px;
+font-weight: 600;
+
+text-decoration: none;
+
+transition: color 0.2s ease;
+
+}
+
+.view-section-link:hover {
+color: #3f1d40;
+}
+
+/* =========================================================
+TABLE WRAPPER
+========================================================= */
+
+.table-wrapper {
+width: 100%;
+overflow-x: auto;
+}
+
+/* =========================================================
+TABLE
+========================================================= */
+
+table {
+width: 100%;
+min-width: 650px;
+
+border-collapse: collapse;
+
+}
+
+thead {
+background: #faf9fb;
+}
+
+th {
+padding: 13px 20px;
+
+border-bottom: 1px solid #e9e9ed;
+
+color: #77747b;
+
+text-align: left;
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.7px;
+text-transform: uppercase;
+
+white-space: nowrap;
+
+}
+
+td {
+padding: 15px 20px;
+
+border-bottom: 1px solid #f0f0f2;
+
+color: #45454c;
+
+font-size: 12px;
+line-height: 1.5;
+
+vertical-align: middle;
+
+}
+
+tbody tr {
+transition: background 0.15s ease;
+}
+
+tbody tr {
+background: #fbfafc;
+}
+
+tbody tr td {
+border-bottom: none;
+}
+
+/* =========================================================
+ROLE / STATUS CELLS
+========================================================= */
+
+td:nth-child(3) {
+    font-weight: 600;
+}
+
+/* =========================================================
+DELETE BUTTON
+========================================================= */
+
+.delete-btn {
+    border: 1px solid #f1d4d4;
+    border-radius: 7px;
+
+    padding: 7px 12px;
+
+    background: #fff5f5;
+    color: #c43d3d;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.delete-btn:hover {
+background: #c43d3d;
+border-color: #c43d3d;
+color: white;
+}
+
+/* =========================================================
+COMPLAINT MESSAGE
+========================================================= */
+
+.complaint-message {
+max-width: 350px;
+
+color: #5f5f66;
+
+line-height: 1.55;
+
+word-break: break-word;
+
+}
+
+/* =========================================================
+COMPLAINT STATUS
+========================================================= */
+
+.complaint-status {
+display: inline-flex;
+align-items: center;
+
+padding: 5px 10px;
+
+border-radius: 20px;
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.2px;
+
+}
+
+.complaint-status.pending {
+background: #fff5d9;
+color: #92700d;
+}
+
+.complaint-status.reviewed {
+background: #eeecfa;
+color: #655ca0;
+}
+
+.complaint-status.resolved {
+background: #e7f5e9;
+color: #3f7c47;
+}
+
+/* =========================================================
+COMPLAINT BUTTONS
+========================================================= */
+
+.review-btn,
+.resolve-btn {
+border: none;
+border-radius: 7px;
+
+padding: 7px 11px;
+
+cursor: pointer;
+
+font-size: 10px;
+font-weight: 600;
+
+transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+.review-btn,
+.resolve-btn {
+opacity: 0.88;
+transform: translateY(-1px);
+}
+
+.review-btn {
+margin-right: 5px;
+
+background: #5A2A5B;
+color: white;
+
+}
+
+.resolve-btn {
+margin-right: 5px;
+
+background: #43804a;
+color: white;
+
+}
+
+/* =========================================================
+DASHBOARD FOOTER
+========================================================= */
+
+.dashboard-footer {
+padding: 10px 0 5px;
+
+color: #9999a1;
+
+text-align: center;
+
+font-size: 11px;
+
+}
+
+/* =========================================================
+COLLAPSED SIDEBAR
+========================================================= */
+
+.admin-container.collapsed .sidebar {
+transform: translateX(-100%);
+}
+
+.admin-container.collapsed .content {
+margin-left: 0;
+}
+
+/* =========================================================
+RESPONSIVE — LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1200px) {
+
+.content {
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.stats-grid {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+}
+
+/* =========================================================
+RESPONSIVE — TABLETS
+========================================================= */
+
+@media (max-width: 900px) {
+
+.sidebar {
+    transform: translateX(-100%);
+}
+
+.content {
+    margin-left: 0;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.stats-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+.admin-profile-mini {
+    display: none;
+}
+
+}
+
+/* =========================================================
+RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+.content {
+    padding: 0 15px 30px;
+}
+
+.topbar {
+    min-height: 78px;
+}
+
+.topbar h1 {
+    font-size: 21px;
+}
+
+.menu-toggle {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+}
+
+.dashboard-intro {
+    margin-top: 20px;
+    padding: 22px;
+}
+
+.dashboard-intro h2 {
+    font-size: 19px;
+}
+
+.stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.stat-card {
+    min-height: 140px;
+}
+
+.panel-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 20px;
+}
+
+.view-section-link {
+    margin-top: 2px;
+}
+
+th,
+td {
+    padding: 13px 15px;
+}
+
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+.topbar h1 {
+    font-size: 18px;
+}
+
+.dashboard-intro {
+    padding: 18px;
+}
+
+.dashboard-intro h2 {
+    font-size: 17px;
+}
+
+}
+
+/* =========================================================
+   COMPLAINTS & SUGGESTIONS
+========================================================= */
+
+.feedback-panels {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.feedback-panels .dashboard-panel {
+    min-width: 0;
+    margin-bottom: 28px;
+}
+
+.feedback-panels .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.feedback-panels table {
+    width: 100%;
+    min-width: 600px;
+}
+
+.feedback-message {
+    max-width: 280px;
+    color: #5f5f66;
+    line-height: 1.55;
+    word-break: break-word;
+}
+
+.empty-table-message,
+.error-table-message {
+    text-align: center;
+    padding: 25px !important;
+    color: #888;
+}
+
+.error-table-message {
+    color: #c0392b;
+}
+
+
+/* =========================================================
+   FEEDBACK RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .feedback-panels {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================
+   FEEDBACK RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .feedback-panels {
+        grid-template-columns: 1fr;
+    }
+
+}

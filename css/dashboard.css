@@ -1,0 +1,1334 @@
+/* ============================================
+   AgroConnect Dashboard
+   Buyer + Seller Dashboard Styles
+   ============================================ */
+
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+    padding: 2.5rem 0 1.5rem;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+
+    font-size: 0.6875rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    color: var(--plum);
+
+    background-color: rgba(92, 39, 68, 0.08);
+
+    padding: 0.375rem 0.75rem;
+
+    border-radius: 20px;
+
+    margin-bottom: 1.25rem;
+}
+
+.hero-tag::before {
+    content: '';
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background-color: var(--plum);
+}
+
+
+/* ============================================
+   HERO LAYOUT
+   ============================================ */
+
+.hero-with-cards {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+
+    gap: 3rem;
+
+    align-items: center;
+
+    padding: 1.5rem 0 2.5rem;
+}
+
+
+/* ============================================
+   HERO LEFT
+   ============================================ */
+
+.hero-left {
+    padding-top: 0.5rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+
+    font-size: 3rem;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin-bottom: 1.25rem;
+
+    max-width: 600px;
+}
+
+.hero-title em {
+    color: var(--plum);
+
+    font-style: italic;
+}
+
+.hero-description {
+    font-size: 0.95rem;
+
+    color: var(--text-muted);
+
+    max-width: 540px;
+
+    line-height: 1.75;
+
+    margin-bottom: 1.75rem;
+}
+
+
+/* ============================================
+   HERO BUTTONS
+   ============================================ */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 0.75rem;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+
+/* ============================================
+   HERO CARDS
+   ============================================ */
+
+.hero-cards {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.75rem;
+
+    width: 100%;
+}
+
+
+/* ============================================
+   ACTION CARDS
+   ============================================ */
+
+.action-card {
+    background-color: var(--card-white);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+    padding: 1.2rem 1.4rem;
+
+    min-height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.25rem;
+
+    text-decoration: none;
+
+    color: var(--text-dark);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    cursor: pointer;
+}
+
+.action-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.07);
+
+    border-color:
+        rgba(92, 39, 68, 0.25);
+}
+
+.action-card h3 {
+    font-family: var(--font-heading);
+
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    color: var(--plum);
+
+    margin: 0;
+}
+
+.action-card p {
+    font-size: 0.8rem;
+
+    line-height: 1.5;
+
+    color: var(--text-muted);
+
+    margin: 0.2rem 0 0.4rem;
+}
+
+.action-card .card-link {
+    font-size: 0.76rem;
+
+    font-weight: 600;
+
+    color: var(--plum);
+
+    margin-top: auto;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.navbar-links a {
+    white-space: nowrap;
+}
+
+
+/* ============================================
+   FEATURED IMAGE SLIDESHOW
+   ============================================ */
+
+.featured-section {
+    padding: 1rem 0 2.5rem;
+}
+
+.section-heading {
+    margin-bottom: 1.25rem;
+}
+
+.section-tag {
+    display: inline-block;
+
+    color: var(--plum);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    margin-bottom: 0.4rem;
+}
+
+.section-heading h2 {
+    font-family: var(--font-heading);
+
+    font-size: 1.9rem;
+    font-weight: 400;
+
+    color: var(--text-dark);
+
+    margin: 0;
+}
+
+
+/* ============================================
+   SLIDESHOW
+   ============================================ */
+
+.featured-slider {
+    position: relative;
+
+    width: 100%;
+    height: 360px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background-color: var(--plum);
+}
+
+.featured-slide {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.featured-slide.active {
+    display: block !important;
+}
+
+.featured-slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    display: block;
+}
+
+.featured-slide img.farmer-week-image {
+    object-position: center 15% !important;
+}
+
+/* ============================================
+   FEATURED PERSON INFO
+   ============================================ */
+
+.featured-person-info {
+    margin-top: 1rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.2rem;
+}
+
+.featured-person-info strong {
+    font-family: var(--font-heading);
+
+    font-size: 1rem;
+
+    font-weight: 400;
+
+    color: var(--plum);
+}
+
+.featured-person-info span {
+    font-size: 0.75rem;
+
+    color: var(--text-muted);
+}
+
+/* ============================================
+   FEATURED PERSON TAG
+   ============================================ */
+
+.featured-person {
+    position: absolute;
+
+    left: 1.5rem;
+    bottom: 1.5rem;
+
+    z-index: 4;
+
+    color: white;
+
+    text-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+
+.featured-label {
+    display: inline-block;
+
+    font-size: .7rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: .06em;
+
+    color: var(--lavender-light);
+
+    margin-bottom: .35rem;
+}
+
+.featured-person h3 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    color: white;
+}
+
+.featured-person p {
+    margin: .25rem 0 0;
+
+    font-size: .8rem;
+
+    color: rgba(255,255,255,.85);
+}
+
+/* ============================================
+   SLIDER ARROWS
+   ============================================ */
+
+.slider-btn {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(92, 39, 68, 0.9);
+
+    color: white;
+
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.slider-btn:hover {
+    background-color: var(--plum);
+
+    transform: translateY(-50%) scale(1.05);
+}
+
+.slider-prev {
+    left: 1rem;
+}
+
+.slider-next {
+    right: 1rem;
+}
+
+
+/* ============================================
+   SLIDER DOTS
+   ============================================ */
+
+.slider-dots {
+    position: absolute;
+
+    bottom: 1rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 0.5rem;
+
+    z-index: 5;
+}
+
+.slider-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.6);
+
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background-color: white;
+}
+
+
+/* ============================================
+   SELLER / BUYER INFORMATION CARDS
+   ============================================ */
+
+.seller-info-section {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.25rem;
+
+    padding: 2.5rem 0;
+}
+
+.seller-info-card {
+    background-color: var(--card-white);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 12px;
+
+    padding: 1.75rem;
+}
+
+.seller-info-card h3 {
+    font-family: var(--font-heading);
+
+    font-size: 1.25rem;
+
+    font-weight: 400;
+
+    color: var(--plum);
+
+    margin-bottom: 0.6rem;
+}
+
+.seller-info-card p {
+    color: var(--text-muted);
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 1.25rem;
+}
+
+
+/* ============================================
+   BUTTONS INSIDE INFORMATION CARDS
+   ============================================ */
+
+.seller-info-card .btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+
+/* ============================================
+   OLD STATS
+   ============================================
+
+   Statistics have intentionally been removed
+   from the dashboards because the old values
+   were static/fake and appeared the same for
+   every user.
+
+   We can add user-specific statistics later
+   when they are connected to the database.
+*/
+
+
+.stats-grid {
+    display: none;
+}
+
+
+/* ============================================
+   HERO IMAGE
+   ============================================ */
+
+.hero-image {
+    width: 100%;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    margin: 1.5rem 0;
+}
+
+.hero-image img {
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+}
+
+
+/* ============================================
+   STATES COVERAGE
+   ============================================ */
+
+.states-section {
+    padding: 2rem 0;
+
+    border-top: 1px solid var(--divider);
+}
+
+.states-grid {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+.state-item {
+    text-align: left;
+}
+
+.state-item h4 {
+    font-family: var(--font-heading);
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    color: var(--plum);
+
+    font-weight: 400;
+}
+
+.state-item span {
+    font-size: 0.75rem;
+
+    color: var(--text-muted);
+}
+
+
+/* ============================================
+   FEATURED PRODUCE
+   ============================================ */
+
+.featured-section {
+    padding: 2.5rem 0;
+}
+
+.featured-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 1.25rem;
+}
+
+.featured-header .view-all {
+    font-size: 0.8125rem;
+
+    font-weight: 500;
+
+    color: var(--text-dark);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.375rem;
+
+    white-space: nowrap;
+}
+
+.featured-header .view-all:hover {
+    color: var(--plum);
+}
+
+.produce-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.25rem;
+}
+
+.produce-card {
+    background-color: var(--card-white);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition: box-shadow 0.2s ease;
+
+    cursor: pointer;
+}
+
+.produce-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.produce-card-image {
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+}
+
+.produce-card-body {
+    padding: 1rem 1.25rem;
+}
+
+.produce-card-body h4 {
+    font-family: var(--font-heading);
+
+    font-size: 1rem;
+
+    font-weight: 400;
+
+    margin-bottom: 0.25rem;
+}
+
+.produce-card-body .produce-meta {
+    font-size: 0.75rem;
+
+    color: var(--text-muted);
+}
+
+.produce-card-body .produce-price {
+    font-size: 0.9375rem;
+
+    font-weight: 600;
+
+    color: var(--plum);
+
+    margin-top: 0.5rem;
+}
+
+
+/* ============================================
+   MARKETPLACE
+   ============================================ */
+
+.marketplace-header {
+    padding: 1.5rem 0;
+}
+
+.marketplace-header .section-label {
+    margin-bottom: 0.375rem;
+}
+
+.marketplace-header h2 {
+    font-family: var(--font-heading);
+
+    font-size: 2rem;
+
+    font-weight: 400;
+
+    margin-bottom: 0.375rem;
+}
+
+.marketplace-header p {
+    font-size: 0.875rem;
+
+    color: var(--text-muted);
+}
+
+.marketplace-filters {
+    padding-bottom: 1rem;
+}
+
+.marketplace-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.25rem;
+
+    padding-bottom: 2rem;
+}
+
+
+/* ============================================
+   PROFILE
+   ============================================ */
+
+.profile-section {
+    padding: 2rem 0;
+}
+
+.profile-card {
+    background-color: var(--card-white);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 10px;
+
+    padding: 2rem;
+
+    max-width: 600px;
+}
+
+.profile-card h2 {
+    font-family: var(--font-heading);
+
+    font-size: 1.5rem;
+
+    margin-bottom: 1.25rem;
+}
+
+.profile-field {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 0.625rem 0;
+
+    border-bottom: 1px solid var(--divider);
+
+    font-size: 0.875rem;
+}
+
+.profile-field:last-child {
+    border-bottom: none;
+}
+
+.profile-field strong {
+    color: var(--text-dark);
+}
+
+.profile-field span {
+    color: var(--text-muted);
+}
+
+.profile-actions {
+    margin-top: 1.5rem;
+
+    display: flex;
+
+    gap: 0.75rem;
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.main-footer {
+    margin-top: 4rem;
+
+    padding: 45px 60px 20px;
+
+    background-color: var(--plum);
+
+    color: white;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 80px;
+}
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.footer-content h3,
+.footer-content h4 {
+    font-family: var(--font-heading);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: white;
+
+    margin-top: 0;
+
+    margin-bottom: 0.75rem;
+}
+
+.footer-content h3 {
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-style: italic;
+
+    font-size: 1.35rem;
+
+    font-weight: 400;
+}
+
+.footer-content h4 {
+    font-size: 0.95rem;
+
+    font-weight: 500;
+}
+
+.footer-content p {
+    font-size: 0.8rem;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    margin: 0 0 0.4rem;
+
+    max-width: 280px;
+}
+
+.footer-content ul {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.footer-content li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-content a {
+    font-size: 0.8rem;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+.main-footer hr {
+    border: 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    margin: 0 auto 1rem;
+}
+
+.main-footer .copyright {
+    text-align: center;
+
+    font-size: 0.75rem;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    margin: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+
+    .hero-with-cards {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .states-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .produce-grid,
+    .marketplace-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ============================================
+   TABLET
+   ============================================ */
+
+@media (max-width: 850px) {
+
+    .hero-with-cards {
+        grid-template-columns: 1fr;
+
+        gap: 2rem;
+    }
+
+    .hero-left {
+        padding-top: 0;
+    }
+
+    .hero-cards {
+        max-width: 100%;
+    }
+
+    .featured-slider {
+        grid-template-columns: 1fr;
+    }
+
+    .seller-info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* ============================================
+   MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding-top: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.15rem;
+    }
+
+    .hero-description {
+        font-size: 0.875rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-size: 1.6rem;
+    }
+
+    .featured-slider {
+    height: 280px;
+}
+
+.slider-btn {
+    width: 38px;
+    height: 38px;
+}
+
+    .states-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .produce-grid,
+    .marketplace-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-header {
+        flex-direction: column;
+
+        gap: 0.5rem;
+    }
+
+    .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+}
+
+
+/* ============================================
+   SMALL MOBILE
+   ============================================ */
+
+@media (max-width: 480px) {
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .hero-tag {
+        font-size: 0.6rem;
+    }
+
+    .action-card {
+        padding: 1.15rem;
+    }
+
+    .featured-slider {
+    height: 220px;
+}
+
+.slider-prev {
+    left: 0.6rem;
+}
+
+.slider-next {
+    right: 0.6rem;
+}
+
+    .feature-placeholder {
+        padding: 1.25rem;
+    }
+
+    .states-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================
+   DASHBOARD USER SEARCH
+========================================== */
+
+.dashboard-user-search {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    z-index: 50;
+}
+
+.dashboard-search-box {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border: 1px solid #d9d4d7;
+
+    border-radius: 21px;
+
+    padding: 0 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.dashboard-search-box:focus-within {
+    border-color: var(--plum);
+
+    box-shadow:
+        0 0 0 3px rgba(92, 39, 68, 0.10);
+}
+
+.dashboard-search-icon {
+    flex-shrink: 0;
+
+    font-size: 14px;
+
+    margin-right: 8px;
+
+    opacity: 0.55;
+}
+
+#user-search-input {
+    flex: 1;
+
+    min-width: 0;
+
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 13px;
+
+    color: var(--text-dark);
+}
+
+#user-search-input::placeholder {
+    color: #999;
+}
+
+
+/* ==========================================
+   SEARCH RESULTS
+========================================== */
+
+.user-search-results {
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 7px);
+
+    left: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e3e3;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+    overflow: hidden;
+
+    max-height: 350px;
+
+    overflow-y: auto;
+
+    z-index: 1000;
+}
+
+
+/* ==========================================
+   SEARCH RESULT
+========================================== */
+
+.user-search-result {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 12px;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #f0f0f0;
+
+    transition:
+        background 0.2s ease;
+}
+
+.user-search-result:hover {
+    background: #f8f5f7;
+}
+
+.user-search-result:last-child {
+    border-bottom: none;
+}
+
+
+/* ==========================================
+   SEARCH AVATAR
+========================================== */
+
+.user-search-avatar {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--plum);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   SEARCH USER INFO
+========================================== */
+
+.user-search-info {
+    min-width: 0;
+}
+
+.user-search-info h4 {
+    margin: 0 0 3px;
+
+    font-size: 13px;
+
+    color: var(--text-dark);
+}
+
+.user-search-info p {
+    margin: 0;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+.user-search-info span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    color: #999;
+}
+
+
+/* ==========================================
+   SEARCH EMPTY / ERROR
+========================================== */
+
+.no-search-results,
+.search-error {
+    padding: 15px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+.farmer-week-image + .featured-person .featured-label {
+    color: var(--plum);
+}

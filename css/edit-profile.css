@@ -1,0 +1,346 @@
+/* ==========================================================
+   AGROCONNECT - EDIT PROFILE PAGE
+   ========================================================== */
+
+/* ==========================================================
+   MAIN EDIT PROFILE CONTAINER
+   ========================================================== */
+
+.edit-profile-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   MAIN EDIT PROFILE CARD
+   ========================================================== */
+
+.edit-profile-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 35px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+/* Content card inside edit profile */
+
+.edit-profile-card .content-card {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================================
+   EDIT PROFILE HEADER
+   PROFILE PICTURE + BUSINESS NAME
+   ========================================================== */
+
+.edit-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin: 10px auto 45px;
+    width: 100%;
+}
+
+/* ==========================================
+   PROFILE PICTURE SECTION
+========================================== */
+
+.profile-picture-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 18px;
+}
+
+.profile-image {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border: 3px solid var(--plum);
+}
+
+
+/* ==========================================
+   PROFILE FILE INPUT
+========================================== */
+
+.profile-file-input {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+#profile-picture {
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+}
+
+/* ==========================================================
+   BUSINESS NAME
+   ========================================================== */
+
+.edit-business-section {
+    width: 100%;
+    max-width: 450px;
+}
+
+.edit-business-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.edit-business-section label i {
+    color: var(--plum);
+    margin-right: 7px;
+}
+
+.edit-business-section input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.edit-business-section input:focus {
+    outline: none;
+    border-color: var(--plum);
+    box-shadow: 0 0 0 2px rgba(103, 42, 105, 0.08);
+}
+
+.edit-business-section p {
+    margin-top: 7px;
+    margin-bottom: 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================
+   FORM LAYOUT
+   ========================================================== */
+
+.edit-profile-container .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* ==========================================================
+   FORM FIELDS
+   ========================================================== */
+
+.edit-profile-container .form-group {
+    margin-bottom: 18px;
+}
+
+.edit-profile-container .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.edit-profile-container .form-group input,
+.edit-profile-container .form-group textarea,
+.edit-profile-container .form-group select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.edit-profile-container .form-group input:focus,
+.edit-profile-container .form-group textarea:focus,
+.edit-profile-container .form-group select:focus {
+    outline: none;
+    border-color: var(--plum);
+    box-shadow: 0 0 0 2px rgba(103, 42, 105, 0.08);
+}
+
+/* ==========================================================
+   BIO
+   ========================================================== */
+
+.edit-profile-container textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.edit-profile-container .button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.edit-profile-container #save-profile-btn,
+.edit-profile-container #cancel-profile-btn {
+    min-width: 170px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.edit-profile-container #save-profile-btn {
+    background: var(--plum);
+    color: #fff;
+    border: none;
+}
+
+.edit-profile-container #save-profile-btn:hover {
+    background: var(--plum-dark);
+    transform: translateY(-2px);
+}
+
+.edit-profile-container #cancel-profile-btn {
+    background: #888;
+    color: #fff;
+    border: none;
+}
+
+.edit-profile-container #cancel-profile-btn:hover {
+    background: #666;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .edit-profile-container {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    .edit-profile-card {
+        padding: 25px 20px;
+    }
+
+    .edit-profile-header {
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 35px;
+    }
+
+    .edit-business-section {
+        max-width: 100%;
+    }
+
+    .edit-profile-container .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edit-profile-container .button-group {
+        flex-direction: column;
+    }
+
+    .edit-profile-container #save-profile-btn,
+    .edit-profile-container #cancel-profile-btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   PROFILE PHOTO
+========================================== */
+
+.profile-image-wrapper {
+    position: relative;
+
+    width: 130px;
+    height: 130px;
+}
+
+.profile-image {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* REMOVE PHOTO BUTTON */
+
+.remove-profile-picture {
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    width: 28px;
+    height: 28px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--plum);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.remove-profile-picture:hover {
+    transform: scale(1.08);
+
+    background-color: #421b31;
+}
